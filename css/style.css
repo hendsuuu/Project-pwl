@@ -95,15 +95,14 @@ a{
 
 
 
-section{
+.banner{
    padding: 50px 100px;
    display: grid;
-   
    grid-template-areas:
     'container-left container-left'
    'container-right container-right';
 }
-section .container{
+.banner .container{
     padding: 50px;
     border-radius: 20px;
     color: white;
@@ -112,13 +111,15 @@ section .container{
     width: 600px;
 }
 .banner .button{
-    background-color: #F07B3F;
-    height: 50px;
-    width: 150px;
+    background-color: #ff5500;
+    padding: 20px 20px;
     margin-top: 20px;
     border-radius: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
 }
-section .container img{
+.banner .container img{
     width: 150px;
     height: 220px;
     
@@ -134,6 +135,17 @@ section .container img{
     padding: 10px;
     width: 600px;
     height: 300px;  
+}
+.btn-kirim
+{
+    padding: 20px 100px;
+    background-color: rgb(0, 222, 118);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    
 }
 #check:checked ~ .sidebar{
     left: 0;
@@ -184,7 +196,6 @@ section .container img{
     }
 }
 @media  (max-width : 568px){
-    
     .mobile-menu{
         display: block;
     }
@@ -194,22 +205,22 @@ section .container img{
     .sidebar{
         display: block;
     } 
-    section{
+    .banner{
         padding: 20px;
         grid-template-areas: 
          'container-left'
          'container-right';
     }
-    section .container{
+    .banner .container{
         text-align: center;
         width: 80%;
         grid-area: container-left;
         
     }
-    section .container .container-left h2{
+    .banner .container .container-left h2{
         font-size: 12px;
     }
-    section .container .container-left p {
+    .banner .container .container-left p {
         font-size: 12px;
     }
    
