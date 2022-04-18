@@ -3,11 +3,15 @@
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
 }
 /*Header*/
 header{
     height: 72px;
-    background-color: #ffffff;
+    background-color: #ffffff76;
+    position: fixed;
+    width: 100%;
 
 }
 header h1{
@@ -48,7 +52,6 @@ a{
     display: none;
     padding: 25px;
     color: #2D4059;
-    
     transition: 0.5s;
 }
 .mobile-menu:hover{
@@ -67,6 +70,7 @@ a{
     width: 300px;
     background-color: #2D4059;
     transition: 0.5s;
+    z-index: 3;
 }
 .sidebar ul li a{
     color: white;
@@ -83,38 +87,61 @@ a{
 .container{
     width: 95%;
     margin: 0 20px; 
-    justify-content: space-between;
+    
+    place-content: center;
 }
 .container::after{
     content: '';
     display: block;
     clear: both;
 }
+/*Body*/
+
+body{
+    
+    background-color: 37392E;
+}
+
+
+
+
 
 /*Banner*/
 
 
 
 .banner{
-   padding: 50px 100px;
+    
+    width: 100%;
+   padding: 50px 100px ;
+   background-image: url('img/gunung.jpg');
    display: grid;
    grid-template-areas:
     'container-left container-left'
    'container-right container-right';
+   place-content: center;
+   
 }
 .banner .container{
+    margin-top: 50px;
+    
     padding: 50px;
     border-radius: 20px;
     color: white;
     text-align: left;
     background-color: #2D4059;
-    width: 600px;
+    width: 720px;
+    box-shadow: 5px 5px 15px #2D4059;
+}
+.container-left{
+    text-align: center;
 }
 .banner .button{
     background-color: #ff5500;
     padding: 20px 20px;
     margin-top: 20px;
     border-radius: 10px;
+    border: none;
     color: #ffffff;
     font-size: 20px;
     font-weight: 700;
@@ -124,20 +151,28 @@ a{
     height: 220px;
     
 }
-.banner .container .container-left{
-    grid-area: container-left;
-    font-size: 15px;
-}
+
 
 .container-right .secreto{
-    background-color: #FFD460;
+    margin-top: 50px;
+    background-color: #edd311;
     border-radius: 20px;
-    padding: 10px;
+    padding: 20px;
     width: 600px;
-    height: 300px;  
+    color: #ffffff;
+    height: 350px; 
+    box-shadow: 5px 5px 15px #c89710; 
+}
+.container-right .secreto .nama{
+    width: 350px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
 }
 .btn-kirim
 {
+    border: none;
     padding: 20px 100px;
     background-color: rgb(0, 222, 118);
     border-radius: 10px;
@@ -147,6 +182,126 @@ a{
     letter-spacing: 3px;
     
 }
+.btn-kirim :hover{
+    box-shadow: 5px 5px 2px rgb(0, 0, 0);
+    
+}
+/*
+ SECRETO
+
+*/
+.cont-secreto{
+    
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    padding: 30px 100px;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    
+}
+.cont-secreto .msg{
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    height: auto;
+    max-height: 100%;
+    color: rgb(0, 0, 0);
+    font-size:18px;
+    border: 5px dashed #2D4059;
+    
+}
+.cont-secreto .msg a{
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    
+}
+.komen{
+    border: 2px solid #2D4059;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #2D4059;
+}
+.cont-secreto .msg h2{
+    text-align: center;
+}
+/*
+ABout
+*/
+
+
+.content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding:0px 85px ;
+    place-content: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+}
+
+.isi{
+    width: 48%;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    height: 300px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: 5px dashed #2D4059;
+    
+}
+.isi:hover{
+    background-color: #2D4059;
+    color: #fff;
+    border: 5px solid #2D4059;
+    transition: 0.8s ease;
+    transition-delay: 0.5s;
+
+}
+.message{
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+/*
+footer
+*/
+footer{
+    display: flex;
+    padding: 50px 100px;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: #465d7a;
+    color: #fff;
+    flex: wrap;
+
+}
+footer div{
+    display: block;
+    width: 30%;
+}
+footer .conten a{
+    text-decoration: none;
+    color: #fff;
+}
+footer .conten a :hover{
+    color: #ff5500;
+}
+.footer2{
+    background-color: #2D4059;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
 #check:checked ~ .sidebar{
     left: 0;
 }
@@ -164,38 +319,62 @@ a{
         display: block;
     } 
    
-    section{
-        gap: 30px;
+    .banner{
+        
+        background: url('img/gunung.jpg');
         padding: 20px;
         grid-template-areas: 
         'container-left'
         'container-right';
     }
-    section .container{
+    .banner .container{
         text-align: center;
-        width: 90%;
+        width: 600px;
         place-content: center;
         font-size: 8px;
         grid-area: container-left;
     }
     .container-right{
         grid-area: container-right;
+        width: 600px;
     }
     .container-right{
         grid-area: container-right;
         margin: 20px;
     }
     .container-right .secreto{
+
         background-color: #FFD460;
         border-radius: 20px;
-        padding: 10px;
-         width: 100%;
-        height: 300px;
-       
+        width: 100%;
+        height: auto;   
+    }
+    .cont-secreto .msg{
+        width: 600px;
+        border-radius: 20px;
+        padding: 20px;
+        height: auto;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border: 5px dashed #2D4059;
         
     }
+    .content{
+        padding:0px 100px ;
+    }
+    .isi{
+        width: 600px;
+    }
+    footer{
+        padding: 30px 10px;
+        
+    }
+   
 }
 @media  (max-width : 568px){
+    header{
+        width: 100%;
+    }
     .mobile-menu{
         display: block;
     }
@@ -205,35 +384,79 @@ a{
     .sidebar{
         display: block;
     } 
+   
     .banner{
+        
+        background: url('img/gunung.jpg');
         padding: 20px;
         grid-template-areas: 
-         'container-left'
-         'container-right';
+        'container-left'
+        'container-right';
     }
     .banner .container{
         text-align: center;
-        width: 80%;
+        width: 300px;
+        place-content: center;
+        font-size: 8px;
         grid-area: container-left;
-        
     }
-    .banner .container .container-left h2{
-        font-size: 12px;
-    }
-    .banner .container .container-left p {
-        font-size: 12px;
-    }
-   
     .container-right{
         grid-area: container-right;
+        width: 300px;
         margin: 20px;
     }
+    
     .container-right .secreto{
+
         background-color: #FFD460;
         border-radius: 20px;
         width: 100%;
-        height: 200px;
+        height: auto;   
+        padding:20px ;
+        margin-bottom: 30px;
+    }
+    .cont-secreto .msg{
+        width: 300px;
+        border-radius: 20px;
+        padding: 20px;
+        height: auto;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border: 5px dashed #2D4059;
         
+    }
+    .isi{
+        width: 400px;
+        height: 800px;
+    }
+    .btn-kirim{
+        padding: 20px 85px;
+    }
+    .content{
+        padding:0px 30px ;
+    }
+    .message{
+        width: 260px;
+        resize: none;
+
+    }
+    .cont-secreto{
+        padding: 0px;
+        margin-bottom: 30px;
+    }
+    .container-right .secreto .nama{
+        width: 260px;
+    }
+    footer{
+        display: block;
+        place-content: left;
+        padding: 30px 20px;
+        height: 600px;
+        
+    }
+    footer div{
+        width: 100%;
+        margin-top: 50px;
     }
    
 }
